@@ -1,10 +1,11 @@
 package com.example.linkshortener.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Builder;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.time.LocalDate;
-
+@Builder
 public record LinkDto(
         String id,
         @JsonIgnore
@@ -20,5 +21,4 @@ public record LinkDto(
                 .buildAndExpand(id)
                 .toUriString();
     }
-
 }

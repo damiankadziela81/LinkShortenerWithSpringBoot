@@ -2,6 +2,7 @@ package com.example.linkshortener.controller;
 
 import com.example.linkshortener.dto.LinkDto;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 
 import java.time.LocalDate;
 

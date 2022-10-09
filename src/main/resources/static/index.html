@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        url = "/links"
+        window.addEventListener("load", function () {
+            function sendData() {
+                const FD = new FormData(form);
+
+                fetch(
+                    url,
+                    {
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify(Object.fromEntries(FD)),
+                        method: "POST"
+                    }
+                ).then((response) => response.json().then(res => ({status: response.status, data: res})))
+                    .then((apiResponse) => {
+                        console.log("Server answer: " + JSON.stringify(apiResponse));
+                        if (apiResponse.status === 201) {
+                            document.getElementById('response').innerHTML = "Link shortened: <a href=" + apiResponse.data.shortenedLink + " target='_blank'>" + apiResponse.data.shortenedLink + "</a>";
+                        } else {
+                            document.getElementById('response').innerHTML = apiResponse.data.errorMessage;
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        document.getElementById('response').innerHTML = error;
+                    });
+            }
+
+            const form = document.getElementById("myForm");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                sendData();
+            });
+        });
+    </script>
+</head>
+<body>
+<form id="myForm">
+    <label for="id">Link identifier:</label><br>
+    <input id="id" name="id" placeholder="link-alias" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input id="email" name="email" type="email" required><br><br>
+
+    <label for="targetUrl">Target URL:</label><br>
+    <input id="targetUrl" name="targetUrl" type="url" required><br><br>
+
+    <label for="expirationDate">Expiration Date (optional):</label><br>
+    <input id="expirationDate" name="expirationDate" type="date"><br><br>
+
+    <input type="submit" value="Shorten link!">
+</form>
+<br>
+<div id="response"></div>
+</body>
+</html>

@@ -3,10 +3,12 @@ package com.example.linkshortener.link;
 import com.example.linkshortener.dto.LinkDto;
 import com.example.linkshortener.link.exceptions.DuplicateLinkException;
 import com.example.linkshortener.link.exceptions.LinkNotFoundException;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.HashMap;
+
 
 @Service
 class LinkServiceImpl implements LinkService {
