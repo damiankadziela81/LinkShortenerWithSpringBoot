@@ -1,11 +1,11 @@
-package com.example.linkshortener;
+package com.example.linkshortener.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.time.LocalDate;
 
-record LinkDto(
+public record LinkDto(
         String id,
         @JsonIgnore
         String email,

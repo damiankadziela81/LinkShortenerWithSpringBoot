@@ -1,5 +1,6 @@
-package com.example.linkshortener;
+package com.example.linkshortener.controller;
 
+import com.example.linkshortener.dto.LinkDto;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.time.LocalDate;
