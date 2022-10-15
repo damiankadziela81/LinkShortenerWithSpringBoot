@@ -1,11 +1,13 @@
 package com.example.linkshortener.link;
 
 import com.example.linkshortener.dto.LinkDto;
-import com.example.linkshortener.link.exceptions.DuplicateLinkException;
-import com.example.linkshortener.link.exceptions.LinkNotFoundException;
+import com.example.linkshortener.link.api.exceptions.DuplicateLinkException;
+import com.example.linkshortener.link.api.exceptions.LinkNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,7 +17,7 @@ class LinkServiceTest {
 
     @BeforeEach
     void setUp() {
-        linkService = new LinkServiceImpl();
+       linkService = new LinkServiceImpl(new LinkRepositoryInMemory(new HashMap<>()));
     }
 
     @Test

@@ -1,4 +1,4 @@
-package com.example.linkshortener.link.exceptions;
+package com.example.linkshortener.link.api.exceptions;
 
 public class DuplicateLinkException extends RuntimeException {
 

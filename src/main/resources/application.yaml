@@ -1,0 +1,14 @@
+#H2 Console
+#spring.h2.console.enabled=true
+#spring.datasource.url=jdbc:h2:mem:test
+#spring.datasource.username=admin
+#spring.datasource.password=admin
+
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:test
+    username: admin
+    password: admin
