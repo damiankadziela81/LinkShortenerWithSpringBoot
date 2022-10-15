@@ -1,8 +1,7 @@
 package com.example.linkshortener.controller;
 
-import com.example.linkshortener.dto.LinkDto;
+import com.example.linkshortener.link.api.LinkDto;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Future;
