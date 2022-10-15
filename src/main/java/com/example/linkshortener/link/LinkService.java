@@ -6,5 +6,5 @@ public interface LinkService {
     LinkDto createLink(LinkDto toDto);
 
 
-    String obtainLink(String id);
+    String obtainLinkAndIncreaseVisits(String id);
 }
