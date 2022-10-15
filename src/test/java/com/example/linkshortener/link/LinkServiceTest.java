@@ -27,7 +27,7 @@ class LinkServiceTest {
 
         //when
         final LinkDto resultLink = linkService.createLink(linkDto);
-        final String resultTargetUrl = linkService.obtainLink(linkDto.id());
+        final String resultTargetUrl = linkService.obtainLinkAndIncreaseVisits(linkDto.id());
 
         //then
         assertEquals(linkDto.id(), resultLink.id());
@@ -41,7 +41,7 @@ class LinkServiceTest {
         String nonExistingId = "cokolwiek";
 
         //when then
-        assertThrows(LinkNotFoundException.class, () -> linkService.obtainLink(nonExistingId));
+        assertThrows(LinkNotFoundException.class, () -> linkService.obtainLinkAndIncreaseVisits(nonExistingId));
     }
 
     @Test

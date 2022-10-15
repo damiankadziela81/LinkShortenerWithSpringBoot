@@ -38,7 +38,13 @@ class LinkEntity {
         );
     }
 
-//    LinkDto convertEntityToDto(){
-//        return new LinkDto(id, email, targetUrl, expirationDate, visits);
-//    }
+    void setVisits(final int visits) {
+        this.visits = visits;
+    }
+
+    int getVisits() {
+        return visits;
+    }
+
+
 }
