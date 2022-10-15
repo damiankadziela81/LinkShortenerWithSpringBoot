@@ -1,10 +1,7 @@
 package com.example.linkshortener.link;
 
 import com.example.linkshortener.link.api.LinkDto;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 class LinkEntity {
 
     @Id
@@ -47,4 +45,6 @@ class LinkEntity {
     }
 
 
+//    public class LinkEntityBuilder {
+//    }
 }
