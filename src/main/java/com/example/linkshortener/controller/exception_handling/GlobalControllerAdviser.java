@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @ControllerAdvice
 class GlobalControllerAdviser {
 
-    //aby error na stronie byl ladny
+    //aby error na stronie byl ladnie zformatowany
     @ApiResponse(description = "Invalid data provided.", content = @Content(examples = @ExampleObject(value = "{\"errorMessage\": \"expirationDate (2014-06-23) must be a future date, email (incorrect_email) must be a well-formed email address\"}")))
     @ResponseBody
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)

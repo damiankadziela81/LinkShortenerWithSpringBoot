@@ -2,6 +2,8 @@ package com.example.linkshortener.link;
 
 import org.apache.commons.lang3.NotImplementedException;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -20,7 +22,8 @@ class LinkRepositoryInMemory implements LinkRepository{
 
     @Override
     public <S extends LinkEntity> Iterable<S> saveAll(final Iterable<S> entities) {
-        throw new NotImplementedException();
+        entities.forEach(s -> save(s));
+        return entities;
     }
 
     @Override
@@ -71,5 +74,10 @@ class LinkRepositoryInMemory implements LinkRepository{
     @Override
     public void deleteAll() {
         throw new NotImplementedException();
+    }
+
+    @Override
+    public List<LinkEntity> findLinksBeforeDate(final LocalDate currentDate) {
+        return null;
     }
 }
