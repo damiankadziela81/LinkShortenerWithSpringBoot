@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("/links")
@@ -16,7 +18,7 @@ class LinkManageController {
     @PostMapping
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
-    LinkDto createLink(@RequestBody CreateLinkDto link) {
+    LinkDto createLink(@Valid @RequestBody CreateLinkDto link) {
         return linkService.createLink(link.toDto());
     }
 }
