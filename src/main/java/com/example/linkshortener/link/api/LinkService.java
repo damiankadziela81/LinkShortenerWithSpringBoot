@@ -1,6 +1,6 @@
-package com.example.linkshortener.link;
+package com.example.linkshortener.link.api;
 
-import com.example.linkshortener.dto.LinkDto;
+import com.example.linkshortener.link.api.LinkDto;
 
 public interface LinkService {
     LinkDto createLink(LinkDto toDto);

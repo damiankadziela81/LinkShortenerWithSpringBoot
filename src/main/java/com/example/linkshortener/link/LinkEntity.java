@@ -1,6 +1,6 @@
 package com.example.linkshortener.link;
 
-import com.example.linkshortener.dto.LinkDto;
+import com.example.linkshortener.link.api.LinkDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

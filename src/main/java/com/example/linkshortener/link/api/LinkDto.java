@@ -1,4 +1,4 @@
-package com.example.linkshortener.dto;
+package com.example.linkshortener.link.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;

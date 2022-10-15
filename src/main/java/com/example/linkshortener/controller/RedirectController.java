@@ -1,6 +1,6 @@
 package com.example.linkshortener.controller;
 
-import com.example.linkshortener.link.LinkService;
+import com.example.linkshortener.link.api.LinkService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

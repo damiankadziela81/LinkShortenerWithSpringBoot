@@ -1,7 +1,7 @@
 package com.example.linkshortener.controller;
 
-import com.example.linkshortener.dto.LinkDto;
-import com.example.linkshortener.link.LinkService;
+import com.example.linkshortener.link.api.LinkDto;
+import com.example.linkshortener.link.api.LinkService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

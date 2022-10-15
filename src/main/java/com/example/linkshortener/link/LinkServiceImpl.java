@@ -1,6 +1,7 @@
 package com.example.linkshortener.link;
 
-import com.example.linkshortener.dto.LinkDto;
+import com.example.linkshortener.link.api.LinkDto;
+import com.example.linkshortener.link.api.LinkService;
 import com.example.linkshortener.link.api.exceptions.DuplicateLinkException;
 import com.example.linkshortener.link.api.exceptions.LinkNotFoundException;
 import lombok.AllArgsConstructor;
