@@ -1,7 +1,5 @@
 package com.example.linkshortener.link.api;
 
-import com.example.linkshortener.link.api.LinkDto;
-
 import java.util.List;
 
 public interface LinkService {
@@ -11,4 +9,7 @@ public interface LinkService {
     String obtainLinkAndIncreaseVisits(String id);
 
     List<LinkDto> getLinksForVisitsHigherThan(Integer visits);
+
+    LinkDto getLinkById(String id);
+
 }
