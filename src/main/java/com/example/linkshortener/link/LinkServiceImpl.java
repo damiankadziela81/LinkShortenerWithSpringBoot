@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -33,5 +35,13 @@ class LinkServiceImpl implements LinkService {
                 .orElseThrow(() -> new LinkNotFoundException(id));
         linkEntity.setVisits(linkEntity.getVisits() + 1);
         return linkEntity.getTargetUrl();
+    }
+
+    @Override
+    public List<LinkDto> getLinksForVisitsHigherThan(final Integer visits) {
+        return linkRepository.findAllByVisitsGreaterThan(visits)
+                .stream()
+                .map(linkEntity -> linkEntity.toDto())
+                .collect(Collectors.toList());
     }
 }

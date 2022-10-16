@@ -80,4 +80,9 @@ class LinkRepositoryInMemory implements LinkRepository{
     public List<LinkEntity> findLinksBeforeDate(final LocalDate currentDate) {
         return null;
     }
+
+    @Override
+    public List<LinkEntity> findAllByVisitsGreaterThan(final Integer visits) {
+        throw new NotImplementedException();
+    }
 }

@@ -26,6 +26,16 @@ class LinkEntity {
     private LocalDate expirationDate;
     private int visits;
 
+    LinkDto toDto() {
+        return new LinkDto(
+                id,
+                email,
+                targetUrl,
+                expirationDate,
+                visits
+        );
+    }
+
     static LinkEntity fromDto(LinkDto link) {
         return new LinkEntity(
                 link.id(),
@@ -35,6 +45,7 @@ class LinkEntity {
                 link.visits()
         );
     }
+
 
     void setVisits(final int visits) {
         this.visits = visits;
