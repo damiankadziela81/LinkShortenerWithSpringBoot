@@ -87,10 +87,4 @@ class LinkRepositoryInMemory implements LinkRepository{
         throw new NotImplementedException();
     }
 
-    @Override
-    public LinkDto findAllById(final String id) {
-        throw new NotImplementedException();
-    }
-
-
 }

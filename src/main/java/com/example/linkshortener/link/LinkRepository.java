@@ -15,6 +15,4 @@ interface LinkRepository extends CrudRepository<LinkEntity, String> {
 
     List<LinkEntity> findAllByVisitsGreaterThan(Integer visits);
 
-    LinkDto findAllById(String id);
-
 }
