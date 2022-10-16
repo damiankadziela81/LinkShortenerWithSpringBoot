@@ -1,5 +1,6 @@
 package com.example.linkshortener.link;
 
+import com.example.linkshortener.link.api.LinkDto;
 import org.apache.commons.lang3.NotImplementedException;
 
 import java.time.LocalDate;
@@ -85,4 +86,11 @@ class LinkRepositoryInMemory implements LinkRepository{
     public List<LinkEntity> findAllByVisitsGreaterThan(final Integer visits) {
         throw new NotImplementedException();
     }
+
+    @Override
+    public LinkDto findAllById(final String id) {
+        throw new NotImplementedException();
+    }
+
+
 }

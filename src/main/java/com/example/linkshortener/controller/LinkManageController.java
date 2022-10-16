@@ -30,7 +30,13 @@ class LinkManageController {
         return linkService.getLinksForVisitsHigherThan(visits);
     }
 
-//    List<LinkDto> getLinks
+    @GetMapping("/id/{id}")
+    @ResponseBody
+    @ResponseStatus(HttpStatus.OK)
+    LinkDto getLinksWithId(String id) {
+        return linkService.getLinkById(id);
+
+    }
 
 
 }
