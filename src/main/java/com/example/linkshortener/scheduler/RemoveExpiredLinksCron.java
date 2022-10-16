@@ -13,13 +13,13 @@ import java.time.LocalDate;
 @Slf4j //logger
 class RemoveExpiredLinksCron {
 
-//    private final ExpiredLinksService expiredLinksService;
+    private final ExpiredLinksService expiredLinksService;
 
     @Scheduled(cron = "${expired.links.cron}")
-//    @Scheduled(cron = "* * * * * *")
+
     void removeExpiredLinks(){
         log.info("Expired links cron job started.");
-//        expiredLinksService.removeExpiredLinks(LocalDate.now());
+        expiredLinksService.removeExpiredLinks(LocalDate.now());
         log.info("Expired links cron job ended.");
     }
 }

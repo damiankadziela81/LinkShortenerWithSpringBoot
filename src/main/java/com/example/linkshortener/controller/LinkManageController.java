@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @AllArgsConstructor
 @RestController
@@ -21,4 +22,15 @@ class LinkManageController {
     LinkDto createLink(@Valid @RequestBody CreateLinkDto link) {
         return linkService.createLink(link.toDto());
     }
+
+    @GetMapping("/visits/{visits}")
+    @ResponseBody
+    @ResponseStatus(HttpStatus.OK)
+    List<LinkDto> getLinksForVisitsHigherThan(@PathVariable Integer visits) {
+        return linkService.getLinksForVisitsHigherThan(visits);
+    }
+
+//    List<LinkDto> getLinks
+
+
 }
