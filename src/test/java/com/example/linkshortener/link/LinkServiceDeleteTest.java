@@ -54,9 +54,7 @@ class LinkServiceDeleteTest {
     @ParameterizedTest
     @CsvSource(textBlock = """
             id, email, id, email1
-            id, email, id,
-            , ,id ,
-            
+            id, email, id,      
                
             """
     )
