@@ -55,7 +55,4 @@ class LinkEntity {
         return visits;
     }
 
-
-//    public class LinkEntityBuilder {
-//    }
 }
