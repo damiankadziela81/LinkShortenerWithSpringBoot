@@ -26,12 +26,14 @@ record CreateLinkDto(
 
     LinkDto toDto() {
         return new LinkDto(
-                id,
+                id.toLowerCase(),
                 email,
                 targetUrl,
                 expirationDate,
                 0
         );
     }
+
+
 
 }
