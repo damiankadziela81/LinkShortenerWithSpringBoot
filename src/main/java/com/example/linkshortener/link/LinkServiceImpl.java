@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Locale;
 import java.util.stream.Collectors;
 
 
@@ -23,11 +22,10 @@ class LinkServiceImpl implements LinkService {
     @Override
     @Transactional
     public LinkDto createLink(final LinkDto toDto) {
-        final String lowerCaseId = toDto.id().toLowerCase();
-        if (linkRepository.findById(lowerCaseId).isPresent())
+        if (linkRepository.findById(toDto.id()).isPresent())
             throw new DuplicateLinkException(toDto.id());
         final LinkEntity entity = LinkEntity.fromDto(toDto);
-        entity.setId(lowerCaseId);
+        entity.setId(toDto.id());
         linkRepository.save(entity);
         return toDto;
     }
@@ -51,18 +49,16 @@ class LinkServiceImpl implements LinkService {
 
     @Override
     public LinkDto getLinkById(final String id) {
-        final String lowerCaseId = id.toLowerCase();
-        return linkRepository.findById(lowerCaseId)
-                .orElseThrow(() -> new LinkNotFoundException(lowerCaseId))
+        return linkRepository.findById(id)
+                .orElseThrow(() -> new LinkNotFoundException(id))
                 .toDto();
     }
 
     @Override
     public boolean deleteLink(final String id, final String email) {
-        final String lowerCaseId = id.toLowerCase();
-        final LinkDto linkDto = getLinkById(lowerCaseId);
+        final LinkDto linkDto = getLinkById(id.toLowerCase());
         if (linkDto.email().equalsIgnoreCase(email)) {
-            linkRepository.deleteById(lowerCaseId);
+            linkRepository.deleteById(id.toLowerCase());
             return true;
         }
         return false;
